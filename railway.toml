@@ -1,0 +1,8 @@
+[build]
+builder = "nixpacks"
+buildCommand = "cd frontend && npm install && npm run build && cd ../backend && pip install -r requirements.txt && python manage.py collectstatic --noinput"
+
+[deploy]
+startCommand = "cd backend && python manage.py migrate && python seed_data.py && gunicorn core.wsgi --bind 0.0.0.0:$PORT --workers 2"
+healthcheckPath = "/api/health/"
+restartPolicyType = "on_failure"

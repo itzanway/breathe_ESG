@@ -1,5 +1,8 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
+from django.views.generic import TemplateView
+from django.conf.urls.static import static
+from django.conf import settings
 from ingestion import views
 
 urlpatterns = [
@@ -17,14 +20,9 @@ urlpatterns = [
     path('api/summary/', views.summary),
 ]
 
-
-# Serve React frontend for all non-API routes
-from django.views.generic import TemplateView
-from django.conf.urls.static import static
-from django.conf import settings
-
+# Serve React SPA for all non-API, non-admin, non-static routes
 urlpatterns += [
-    path('', TemplateView.as_view(template_name='index.html')),
+    re_path(r'^(?!api/|admin/|static/).*$', TemplateView.as_view(template_name='index.html')),
 ]
 
 if settings.DEBUG:
