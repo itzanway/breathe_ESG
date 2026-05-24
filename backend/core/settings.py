@@ -61,16 +61,14 @@ DATABASES = {
 CORS_ALLOW_ALL_ORIGINS = True
 
 # Static files
+# frontend_build/ = Vite output (source for collectstatic)
+# staticfiles/    = Django collected output (served by WhiteNoise)
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
-    BASE_DIR / 'staticfiles' / 'frontend',
+    BASE_DIR / 'frontend_build',
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-
-# WhiteNoise SPA fallback
-WHITENOISE_INDEX_FILE = True
-WHITENOISE_ROOT = BASE_DIR / 'staticfiles' / 'frontend'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

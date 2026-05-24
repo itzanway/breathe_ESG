@@ -3,12 +3,12 @@ import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 import { copyFileSync, mkdirSync } from 'fs'
 
-// Plugin to copy built index.html into Django templates/ after every build
+// After build: copy index.html into Django templates/
 function copyIndexToTemplates() {
   return {
     name: 'copy-index-to-templates',
     closeBundle() {
-      const src = resolve(__dirname, '../backend/staticfiles/frontend/index.html')
+      const src = resolve(__dirname, '../backend/frontend_build/index.html')
       const destDir = resolve(__dirname, '../backend/templates')
       mkdirSync(destDir, { recursive: true })
       copyFileSync(src, resolve(destDir, 'index.html'))
@@ -25,7 +25,7 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: '../backend/staticfiles/frontend',
+    outDir: '../backend/frontend_build',
     emptyOutDir: true,
     assetsDir: 'assets',
   }
