@@ -1,0 +1,9 @@
+{"bookings": [
+  {"type": "flight", "booking_ref": "BK-2024-001", "date": "2024-01-22", "origin": "BOM", "destination": "DEL", "carrier": "IndiGo"},
+  {"type": "flight", "booking_ref": "BK-2024-002", "date": "2024-02-14", "origin": "SIN", "destination": "LHR", "carrier": "Singapore Airlines"},
+  {"type": "flight", "booking_ref": "BK-2024-003", "date": "2024-03-07", "origin": "XYZ", "destination": "ABC", "carrier": "Unknown"},
+  {"type": "hotel", "booking_ref": "BK-2024-004", "date": "2024-02-14", "city": "London", "hotel": "Marriott", "nights": 3},
+  {"type": "ground_taxi", "booking_ref": "BK-2024-005", "date": "2024-01-22", "route": "Mumbai Airport-Office", "distance_km": 32, "vendor": "Uber"},
+  {"type": "flight", "booking_ref": "BK-2024-006", "date": "2024-03-15", "origin": "DEL", "destination": "BLR", "carrier": "Air India"},
+  {"type": "hotel", "booking_ref": "BK-2024-007", "date": "2024-03-15", "city": "Bangalore", "hotel": "Taj", "nights": 2}
+]}

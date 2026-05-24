@@ -1,0 +1,6 @@
+meter_id,billing_period_start,billing_period_end,consumption_kwh,unit,site,supplier
+MTR-BLR-001,2024-01-01,2024-01-31,48200,kWh,Bangalore HQ,BESCOM
+MTR-BLR-001,2024-02-01,2024-02-29,51.3,MWh,Bangalore HQ,BESCOM
+MTR-DEL-002,2024-03-01,2024-03-31,620000,kWh,Delhi Office,BSES
+MTR-MUM-003,2024-01-01,2024-01-31,32100,kWh,Mumbai Plant,MSEDCL
+MTR-MUM-003,2024-02-01,2024-02-29,29800,kWh,Mumbai Plant,MSEDCL
